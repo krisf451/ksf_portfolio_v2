@@ -6,16 +6,13 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: '525px',
+        md: '768px',
         '4k': '2560px',
         ...defaultTheme.screens,
       },
       colors: {
         darkBg: '#12181b',
         darkBgLight: '#2a2e35',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       animation: {
         slideup: 'slideup .7s ease-in-out',

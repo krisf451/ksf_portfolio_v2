@@ -24,8 +24,8 @@ const DarkModeToggle = () => {
       checked={enabled}
       onChange={setEnabled}
       className={classNames(
-        enabled ? 'bg-customBlack1' : 'bg-gray-200',
-        'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-none ml-2',
+        enabled ? 'bg-darkBg' : 'bg-gray-200',
+        'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-none mx-4 customSlideUp',
       )}
     >
       <span className="sr-only">Use setting</span>

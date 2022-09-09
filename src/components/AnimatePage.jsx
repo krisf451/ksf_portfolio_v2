@@ -22,7 +22,6 @@ const Layout = ({ children }) => (
     animate="animate"
     exit="exit"
     transition={{ duration: 1 }}
-    id="test"
   >
     {children}
   </motion.main>

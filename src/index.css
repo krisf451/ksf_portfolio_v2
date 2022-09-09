@@ -1,8 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  --font-base: "Poppins", sans-serif;
+  --primary-color: #edf2f8;
+  --secondary-color: #313bac;
+  --black-color: #030303;
+  --lightGray-color: #e4e4e4;
+  --gray-color: #6b7688;
+  --brown-color: #46364a;
+  --white-color: #ffffff;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -10,11 +25,81 @@
   -webkit-text-size-adjust: 100%;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: var(--font-base);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  color:black;
+  
+  z-index: 50;
+
+  padding: 1rem;
+  width: 60%;
+  height: 100vh;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+
+  background: url('bgWhite.png');
+  background-size: cover;
+  background-repeat: repeat;
+  box-shadow: 0px 0px 20px rgba(168, 168, 168, 0.15); 
+}
+
+@keyframes customSlideup {
+  from {
+    transform: rotate3d(0, 0, 1, 10deg) skew(10deg, 10deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.customSlideUp {
+  animation-name: customSlideup;
+  animation-duration: 1000ms;
+  transition-duration: 1ms;
+  animation-iteration-count: 1;
+  transform-origin: left bottom;
+}
+
+.prjBtn {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+  display: block;
+  transition: all .5s ease-in-out;
+  background: linear-gradient(to right, black 50%, transparent 0);
+  background-size: 200% 100%;
+  background-position: right;
+}
+.prjBtn:hover{
+  animation: makeItfadeIn .5s forwards;
+  color: white;
+}
+
+@keyframes makeItfadeIn {
+  100% {
+    background-position: left;
+  }
 }
 
 @layer components {
