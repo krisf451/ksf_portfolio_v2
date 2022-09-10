@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
 
 @tailwind base;
 @tailwind components;
@@ -10,12 +6,6 @@
 
 :root {
   --font-base: "Poppins", sans-serif;
-  --primary-color: #edf2f8;
-  --secondary-color: #313bac;
-  --black-color: #030303;
-  --lightGray-color: #e4e4e4;
-  --gray-color: #6b7688;
-  --brown-color: #46364a;
   --white-color: #ffffff;
 
   font-synthesis: none;
@@ -35,30 +25,6 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: var(--font-base);
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  color:black;
-  
-  z-index: 50;
-
-  padding: 1rem;
-  width: 60%;
-  height: 100vh;
-  
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: column;
-
-  background: url('bgWhite.png');
-  background-size: cover;
-  background-repeat: repeat;
-  box-shadow: 0px 0px 20px rgba(168, 168, 168, 0.15); 
 }
 
 @keyframes customSlideup {
@@ -81,35 +47,21 @@
   transform-origin: left bottom;
 }
 
-.prjBtn {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: .5rem 1rem;
-  display: block;
+.fadeBtn {
   transition: all .5s ease-in-out;
   background: linear-gradient(to right, black 50%, transparent 0);
   background-size: 200% 100%;
   background-position: right;
 }
-.prjBtn:hover{
-  animation: makeItfadeIn .5s forwards;
-  color: white;
-}
-
-@keyframes makeItfadeIn {
-  100% {
-    background-position: left;
-  }
-}
 
 @layer components {
-  .custom-btn {
-    @apply py-2 px-4 border rounded-md bg-darkBg text-white font-extrabold text-center flex items-center justify-center w-full transition-all duration-300 ease-linear hover:bg-darkBgLight disabled:hover:bg-gray-400 hover:scale-[98%] disabled:hover:scale-100;
+  .customBtn{
+    @apply block transition-all duration-500 ease-in-out bg-gradient-to-r from-black/50 to-transparent/0 bg-right bg-btnSize hover:animate-makeItfadeIn hover:text-white p-2;
   }
-  .custom-input {
-    @apply h-12 shadow appearance-none border-[#e6e6e6] rounded w-full text-gray-700 mb-2 leading-tight focus:outline-none pl-2 mt-1;
+  .contact-group{
+    @apply col-span-12 lg:col-span-4 h-24 flex items-center justify-center flex-col border border-gray-200 gap-2;
   }
-  .custom-label {
-    @apply text-gray-700 dark:text-white text-sm font-bold mb-2 ml-1 block text-left;
+  .contact-input{
+    @apply border border-gray-200 p-2;
   }
 }

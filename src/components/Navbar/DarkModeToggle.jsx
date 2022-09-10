@@ -4,7 +4,7 @@ import { Switch } from '@headlessui/react';
 
 import { MdDarkMode } from 'react-icons/md';
 import { BsFillSunFill } from 'react-icons/bs';
-import { useDarkMode } from '../hooks/useDarkMode';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');

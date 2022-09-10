@@ -1,14 +1,10 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
-      screens: {
-        md: '768px',
-        '4k': '2560px',
-        ...defaultTheme.screens,
+      backgroundSize: {
+        btnSize: '200% 100%',
       },
       colors: {
         darkBg: '#12181b',
@@ -19,7 +15,8 @@ module.exports = {
         slidedown: 'slidedown 1s ease-in-out',
         slideleft: 'slideleft 1s ease-in-out',
         slideright: 'slideright 1s ease-in-out',
-        slowfade: 'slowfade 1.1s ease-in-out',
+        slowfade: 'slowfade .8s ease-in-out',
+        makeItfadeIn: 'makeItfadeIn .5s forwards',
       },
       keyframes: {
         slowfade: { from: { opacity: 0 }, to: { opacity: 1 } },
@@ -27,6 +24,7 @@ module.exports = {
         slidedown: { from: { opacity: 0, transform: 'translateY(-25%)' }, to: { opacity: 1, transform: 'none' } },
         slideleft: { from: { opacity: 0, transform: 'translateX(-20px)' }, to: { opacity: 1, transform: 'translateX(0)' } },
         slideright: { from: { opacity: 0, transform: 'translateX(20px)' }, to: { opacity: 1, transform: 'translateX(0)' } },
+        makeItfadeIn: { '100%': { backgroundPosition: 'left', color: 'white' } },
       },
     },
   },
