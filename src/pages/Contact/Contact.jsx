@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { AiFillInstagram, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
 import { BiCurrentLocation } from 'react-icons/bi';
-import { BsTelephoneFill } from 'react-icons/bs';
-import { AiOutlineMail } from 'react-icons/ai';
+import { BsTelephoneFill, BsFacebook, BsGithub } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 
@@ -42,11 +42,11 @@ const Contact = () => {
         <div className="hidden lg:flex flex-col items-center animate-slowfade gap-4 uppercase mr-16">
           <div className="relative flex items-center justify-center">
             <h2 className="text-5xl tracking-wider whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
-            <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s chat</h2>
+            <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s <span className="text-blue-500">Chat</span></h2>
           </div>
           <h3 className="text-xl text-gray-600">DON&apos;T BE SHY !</h3>
           <p className="w-3/4 text-center">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
-          <img src="bw_cutout.png" alt="" className="ml-10" />
+          <div />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-4 mb-12">
@@ -60,7 +60,7 @@ const Contact = () => {
           </div>
           <div className="lg:hidden relative flex items-center justify-center uppercase mb-6">
             <h2 className="text-5xl tracking-[.1em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
-            <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s chat</h2>
+            <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s <span className="text-blue-500">chat</span></h2>
           </div>
           <div className="grid grid-cols-12 gap-4 text-gray-600 dark:text-gray-300 text-sm">
             <div className="contact-group whitespace-nowrap truncate">

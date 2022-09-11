@@ -42,7 +42,7 @@
 .customSlideUp {
   animation-name: customSlideup;
   animation-duration: 1000ms;
-  transition-duration: 1ms;
+  transition-duration: .6ms;
   animation-iteration-count: 1;
   transform-origin: left bottom;
 }

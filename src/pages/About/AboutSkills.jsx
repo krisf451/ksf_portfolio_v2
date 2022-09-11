@@ -1,19 +1,21 @@
 import { motion } from 'framer-motion';
 
+import { images } from '../../constants';
+
 const AboutSkills = ({ flip }) => {
   console.log('test');
   return (
     <div className={`animate-slideleft flex flex-col ${flip ? 'md:flex-row-reverse' : 'md:flex-row'} px-8 pb-10 md:pb-0`}>
       <div className="hidden w-full lg:flex flex-col items-center animate-slowfade gap-4 uppercase">
         <div className="relative flex items-center justify-center">
-          <h2 className="text-5xl tracking-[.5em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Resume</h2>
-          <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">About Me</h2>
+          <h2 className="text-5xl tracking-[.1em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Technologies</h2>
+          <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">My <span className="text-blue-500">Skills</span></h2>
         </div>
-        <img src="family2.png" alt="" className="ml-24" />
+        <img src={images.git} alt="" className="" />
       </div>
       <div className="w-full">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="whitespace-nowrap uppercase tracking-[.4em] font-semibold">About Me</h2>
+          <h2 className="whitespace-nowrap uppercase tracking-[.4em] font-semibold">My Skills</h2>
           <motion.hr
             initial={{ width: 0 }}
             animate={{ width: '100%' }}
