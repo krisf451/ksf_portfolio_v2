@@ -1,5 +1,6 @@
 import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { BsFacebook, BsGithub } from 'react-icons/bs';
+import { MdEmail } from 'react-icons/md';
 
 const Socials = () => (
   <div className="flex gap-4 text-2xl items-center">
@@ -14,6 +15,9 @@ const Socials = () => (
     </a>
     <a href="https://www.linkedin.com/in/kristianfulkerson/" target="_blank" rel="noreferrer">
       <AiFillLinkedin className="transition-all duration-300 ease-in-out hover:scale-125" />
+    </a>
+    <a href="mailto:kristianf451@gmail.com">
+      <MdEmail className="transition-all duration-300 ease-in-out hover:scale-125" />
     </a>
   </div>
 );

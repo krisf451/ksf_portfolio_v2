@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 
+import { images } from '../../constants';
+
 const AboutTestimonials = () => {
   console.log('test');
   return (
@@ -13,7 +15,7 @@ const AboutTestimonials = () => {
             <h2 className="text-5xl tracking-[.5em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Resume</h2>
             <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">About Me</h2>
           </div>
-          <img src="family2.png" alt="" className="ml-24" />
+          <img src={images.graphql} alt="" />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-4 mb-12">

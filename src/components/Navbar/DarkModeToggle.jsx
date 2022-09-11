@@ -13,7 +13,7 @@ function classNames(...classes) {
 const DarkModeToggle = () => {
   // eslint-disable-next-line no-unused-vars
   const [darkmode, setDarkmode] = useDarkMode();
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(JSON.parse(localStorage.getItem('dark-theme')));
 
   useEffect(() => {
     setDarkmode(enabled);

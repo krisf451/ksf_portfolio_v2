@@ -12,25 +12,11 @@ const MobileNav = ({ menus }) => {
   const [toggle, setToggle] = useState(false);
   const [darkmode, setDarkmode] = useDarkMode();
   return (
-    <div className="md:hidden relative flex w-full justify-between px-6 items-center h-10">
+    <div className="md:hidden relative flex w-full justify-between px-4 items-center h-10">
       <Link to="/about">
         <h3 className="text-xl customSlideUp uppercase">Kristian F.</h3>
       </Link>
       <AiOutlineMenu className={`${toggle && 'hidden'} cursor-pointer text-[1.6rem] customSlideUp z-1`} id="menu-btn" onClick={() => setToggle(true)} />
-
-      {/* <AnimatePresence mode="wait">
-        {!toggle && (
-        <motion.div
-          whileInView={{ x: [50, 0] }}
-          transition={{ duration: 0.45, ease: 'easeOut' }}
-          exit={{ x: [0, 50], opacity: [1, 0] }}
-          className="h-10 w-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800"
-          onClick={() => setToggle(true)}
-        >
-          <AiOutlineMenu className="cursor-pointer text-[1.4rem]" id="menu-btn" />
-        </motion.div>
-        )}
-      </AnimatePresence> */}
       <AnimatePresence mode="wait">
         {toggle && (
         <motion.div

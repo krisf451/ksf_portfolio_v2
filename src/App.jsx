@@ -19,7 +19,12 @@ const App = () => {
       tags,
       projectLink,
       codeLink,
-      "images": images[].asset->url,
+      imgUrl{
+        asset->{
+          _id,
+          url
+        }
+      },
       video{
         asset->{
           _id,
@@ -42,8 +47,9 @@ const App = () => {
 
   return (
     <div className="dark:bg-black min-h-screen w-full dark:text-white">
+      {/* TODO: This is causing the error somewhere */}
       {isFirstLoad && (
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
@@ -54,6 +60,7 @@ const App = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
+            key={1}
             className="z-20 absolute inset-0 flex w-full h-full justify-center items-center flex-col"
           >
             <motion.div
@@ -70,7 +77,8 @@ const App = () => {
             />
           </motion.div>
         </AnimatePresence>
-      ) } { !isFirstLoad && (
+      )}
+      {!isFirstLoad && (
         <>
           <Toaster />
           <Navbar />

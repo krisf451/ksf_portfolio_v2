@@ -40,7 +40,7 @@ const Contact = () => {
   };
   return (
     <AnimatePage>
-      <div className="flex flex-col md:flex-row px-8 justify-center pb-10 md:pb-0">
+      <div className="flex flex-col md:flex-row px-8 justify-center pb-10 md:pb-6 lg:pb-0">
         <div className="hidden lg:flex flex-col items-center animate-slowfade gap-4 uppercase mr-16">
           <div className="relative flex items-center justify-center">
             <h2 className="text-5xl tracking-wider whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
@@ -63,9 +63,14 @@ const Contact = () => {
               className="border border-gray-200"
             />
           </div>
-          <div className="lg:hidden relative flex items-center justify-center uppercase mb-6">
+          <div className="lg:hidden relative flex flex-col items-center justify-center uppercase mb-6">
             <h2 className="text-5xl tracking-[.1em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
-            <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s <span className="text-blue-500">chat</span></h2>
+            <h2 className="absolute top-2 text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s <span className="text-blue-500">chat</span></h2>
+            <div className="flex mt-4">
+              <h3 className="text-xl text-gray-600 mr-6">DON&apos;T BE SHY !</h3>
+              <Socials />
+            </div>
+            <p className="w-3/4 text-center mt-2">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
           </div>
           <div className="grid grid-cols-12 gap-4 text-gray-600 dark:text-gray-300 text-sm">
             <div className="contact-group whitespace-nowrap truncate">
