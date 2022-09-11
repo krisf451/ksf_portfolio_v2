@@ -58,15 +58,15 @@ const App = () => {
           >
             <motion.div
               initial={{ height: 0 }}
-              animate={{ height: '300px', background: 'white' }}
+              animate={{ height: '300px' }}
               transition={{ duration: 1 }}
-              className="w-[1px]"
+              className="w-[1px] bg-white"
             />
             <motion.div
-              initial={{ height: 0, background: 'white' }}
+              initial={{ height: 0 }}
               animate={{ height: '100%' }}
               transition={{ duration: 1, delay: 1.6 }}
-              className="w-[1px]"
+              className="w-[1px] bg-white"
             />
           </motion.div>
         </AnimatePresence>

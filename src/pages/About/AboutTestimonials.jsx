@@ -7,7 +7,7 @@ const AboutTestimonials = () => {
       whileInView={{ x: [300, 0], opacity: [0, 1] }}
       transition={{ duration: 1.55, ease: 'easeOut' }}
     >
-      <div className="flex flex-col md:flex-row px-8 pb-10 md:pb-0">
+      <div className="flex flex-col md:flex-row px-8 pb-10 md:pb-0" id="testimonials">
         <div className="hidden w-full lg:flex flex-col items-center animate-slowfade gap-4 uppercase">
           <div className="relative flex items-center justify-center">
             <h2 className="text-5xl tracking-[.5em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Resume</h2>
@@ -56,7 +56,6 @@ const AboutTestimonials = () => {
         </div>
       </div>
     </motion.div>
-
   );
 };
 

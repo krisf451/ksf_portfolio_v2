@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { AiFillInstagram, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
+import { AiOutlineMail } from 'react-icons/ai';
 import { BiCurrentLocation } from 'react-icons/bi';
-import { BsTelephoneFill, BsFacebook, BsGithub } from 'react-icons/bs';
+import { BsTelephoneFill } from 'react-icons/bs';
+import { FaRegPaperPlane } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 
 import { client } from '../../client';
+import Socials from '../../components/Socials';
 import Map from './Map';
 import AnimatePage from '../../components/AnimatePage';
 
@@ -44,9 +46,12 @@ const Contact = () => {
             <h2 className="text-5xl tracking-wider whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
             <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s <span className="text-blue-500">Chat</span></h2>
           </div>
-          <h3 className="text-xl text-gray-600">DON&apos;T BE SHY !</h3>
+          <div className="flex">
+            <h3 className="text-xl text-gray-600 mr-6">DON&apos;T BE SHY !</h3>
+            <Socials />
+          </div>
           <p className="w-3/4 text-center">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
-          <div />
+          <img src="contacttw.jpg" alt="" className="h-96 ml-10 rounded-lg opacity-90" />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-4 mb-12">
@@ -84,7 +89,10 @@ const Contact = () => {
               <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Name" className="contact-input" required />
               <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email" className="contact-input" required />
               <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Message" className="contact-input" required />
-              <button className="fadeBtn hover:animate-makeItfadeIn p-3 border w-full dark:hover:bg-white dark:hover:text-black dark:hover:animate-none" type="submit">Send Message</button>
+              <button className="flex justify-center items-center group fadeBtn hover:animate-makeItfadeIn p-3 border w-full dark:hover:bg-white dark:hover:text-black dark:hover:animate-none" type="submit">
+                <FaRegPaperPlane className="hidden mr-6 animate-slowfade group-hover:flex" />
+                Send Message
+              </button>
             </form>
             <div className="w-full flex justify-center">
               <Map />
