@@ -28,7 +28,7 @@ const Navbar = () => {
   // }, []);
 
   return (
-    <nav className="w-full mb-10 h-[80px] flex justify-between items-end py-4 uppercase tracking-[.2em] font-medium text-gray-600 dark:text-gray-200 transition-colors duration-300 ease-in-out">
+    <nav className="w-full mb-10 h-[80px] flex justify-between items-end py-4 uppercase tracking-[.2em] font-medium text-gray-600 dark:text-gray-200 transition-colors duration-300 ease-in-out dark:opacity-90">
       <DesktopNav menus={menus} />
       <MobileNav toggle={toggle} setToggle={setToggle} menus={menus} />
     </nav>

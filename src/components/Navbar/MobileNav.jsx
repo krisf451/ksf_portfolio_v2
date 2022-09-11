@@ -18,7 +18,7 @@ const MobileNav = ({ toggle, setToggle, menus }) => {
         {!toggle && (
         <motion.div
           whileInView={{ x: [50, 0] }}
-          transition={{ duration: 0.85, ease: 'easeOut' }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
           exit={{ x: [0, 50], opacity: [1, 0] }}
           className="h-10 w-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800"
           onClick={() => setToggle(true)}
@@ -31,7 +31,7 @@ const MobileNav = ({ toggle, setToggle, menus }) => {
         {toggle && (
         <motion.div
           whileInView={{ x: [300, 0], opacity: [0, 1] }}
-          transition={{ duration: 0.85, ease: 'easeOut' }}
+          transition={{ duration: 0.65, ease: 'easeOut' }}
           exit={{ x: [0, 300], opacity: [1, 0] }}
           id="mobile-menu"
           className="fixed top-0 bottom-0 right-0 z-[50] w-[60%] h-screen flex flex-col justify-end items-end bg-white dark:bg-gray-900 dark:text-white shadow-xl"

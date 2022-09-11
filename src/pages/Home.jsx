@@ -42,7 +42,7 @@ const Home = () => {
   return (
     <AnimatePage>
       <div className="relative">
-        <motion.div className="flex flex-col justify-center items-start pb-32 lg:pl-[180px] h-[calc(100vh-80px)] w-full overflow-hidden">
+        <motion.div className="flex flex-col justify-center items-start pl-4 pt-56 w-full overflow-hidden">
           <motion.p
             variants={pContainer}
             initial="hidden"

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 
 import { client } from '../../client';
-
+import Map from './Map';
 import AnimatePage from '../../components/AnimatePage';
 
 const initialState = {
@@ -38,10 +38,15 @@ const Contact = () => {
   };
   return (
     <AnimatePage>
-      <div className="flex flex-col md:flex-row px-8 justify-center">
-        <div className="flex-col items-center hidden lg:flex animate-slowfade">
-          <h2 className="text-3xl tracking-wider pr-6">Contact Me</h2>
-          <img src="bw_cutout.png" alt="" />
+      <div className="flex flex-col md:flex-row px-8 justify-center pb-10 md:pb-0">
+        <div className="hidden lg:flex flex-col items-center animate-slowfade gap-4 uppercase mr-16">
+          <div className="relative flex items-center justify-center">
+            <h2 className="text-5xl tracking-wider whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
+            <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s chat</h2>
+          </div>
+          <h3 className="text-xl text-gray-600">DON&apos;T BE SHY !</h3>
+          <p className="w-3/4 text-center">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+          <img src="bw_cutout.png" alt="" className="ml-10" />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-4 mb-12">
@@ -50,13 +55,20 @@ const Contact = () => {
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
               transition={{ duration: 1, ease: 'linear' }}
-              className="border border-gray-400 cursor-pointer hover:border-red-500 duration-500 w-full"
+              className="border border-gray-200"
             />
           </div>
-          <div className="grid grid-cols-12 gap-4 text-gray-600 dark:text-gray-300">
+          <div className="lg:hidden relative flex items-center justify-center uppercase mb-6">
+            <h2 className="text-5xl tracking-[.1em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
+            <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s chat</h2>
+          </div>
+          <div className="grid grid-cols-12 gap-4 text-gray-600 dark:text-gray-300 text-sm">
             <div className="contact-group whitespace-nowrap truncate">
               <BiCurrentLocation className="text-xl" />
-              <p>6140, Correll St Riverside, CA 92504</p>
+              <p className="text-center">6140, Correll St
+                <br />
+                Riverside, CA 92504
+              </p>
             </div>
             <div className="contact-group">
               <AiOutlineMail className="text-xl" />
@@ -67,17 +79,15 @@ const Contact = () => {
               <p>+951 227 3742</p>
             </div>
           </div>
-          <div className="flex flex-col mt-8">
-
-            <form onSubmit={handleSubmit} className="flex flex-col w-full gap-6">
-              <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Name" className="contact-input" />
-              <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email" className="contact-input" />
-              <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Message" className="contact-input" />
-              <button className="fadeBtn hover:animate-makeItfadeIn p-3 border w-48" type="submit">Send Message</button>
+          <div className="flex flex-col md:flex-row gap-4 justify-between mt-8">
+            <form onSubmit={handleSubmit} className="flex flex-col justify-between w-full gap-6 md:gap-0">
+              <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Name" className="contact-input" required />
+              <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email" className="contact-input" required />
+              <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Message" className="contact-input" required />
+              <button className="fadeBtn hover:animate-makeItfadeIn p-3 border w-full dark:hover:bg-white dark:hover:text-black dark:hover:animate-none" type="submit">Send Message</button>
             </form>
-
-            <div className="w-full">
-              <h3>Map</h3>
+            <div className="w-full flex justify-center">
+              <Map />
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "@react-google-maps/api": "^2.12.2",
     "@sanity/client": "^3.3.6",
     "@sanity/image-url": "^1.0.1",
     "framer-motion": "^7.2.1",

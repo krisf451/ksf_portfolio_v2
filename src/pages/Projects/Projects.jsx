@@ -4,28 +4,29 @@ import ProjectCard from './ProjectCard';
 import AnimatePage from '../../components/AnimatePage';
 import { client } from '../../client';
 
-const Projects = () => {
-  const [projects, setProjects] = useState([]);
+const Projects = ({ projects }) => {
+  console.log('projects');
+  // const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
-    const query = `*[_type == "projects"]{
-      title,
-      description,
-      tags,
-      projectLink,
-      codeLink,
-      "images": images[].asset->url,
-      video{
-        asset->{
-          _id,
-          url
-        }
-      },
-    }
-    `;
+  // useEffect(() => {
+  //   const query = `*[_type == "projects"]{
+  //     title,
+  //     description,
+  //     tags,
+  //     projectLink,
+  //     codeLink,
+  //     "images": images[].asset->url,
+  //     video{
+  //       asset->{
+  //         _id,
+  //         url
+  //       }
+  //     },
+  //   }
+  //   `;
 
-    client.fetch(query).then((data) => setProjects(data));
-  }, []);
+  //   client.fetch(query).then((data) => setProjects(data));
+  // }, []);
   return (
     <AnimatePage>
       <div className="flex flex-wrap">
