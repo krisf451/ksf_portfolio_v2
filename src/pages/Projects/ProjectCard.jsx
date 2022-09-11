@@ -3,9 +3,8 @@ import { useRef } from 'react';
 
 const ProjectCard = ({ project }) => {
   const videoRef = useRef(null);
-
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 flex m-6">
+    <div className="prj-group">
       <div className="flex flex-col pr-4 gap-4 w-full p-4">
         <h3 className="animate-slideup text-3xl tracking-wider uppercase underline">{project.title}</h3>
         <div className="flex gap-2 my-2 font-medium">

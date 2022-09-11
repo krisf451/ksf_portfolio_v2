@@ -3,9 +3,7 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      backgroundSize: {
-        btnSize: '200% 100%',
-      },
+      fontFamily: {},
       colors: {
         darkBg: '#12181b',
         darkBgLight: '#2a2e35',

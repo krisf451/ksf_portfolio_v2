@@ -1,17 +1,12 @@
 /* eslint-disable react/no-unknown-property */
 import { motion } from 'framer-motion';
+import Socials from '../../components/Socials';
+import { images } from '../../constants';
 
 const AboutResume = () => {
   console.log('test');
   return (
-    <div className="animate-slideright flex flex-col md:flex-row mb-8 px-8 pb-10 md:pb-0">
-      <div className="hidden w-full lg:flex flex-col items-center animate-slowfade gap-4 uppercase">
-        <div className="relative flex items-center justify-center">
-          <h2 className="text-5xl tracking-[.5em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Resume</h2>
-          <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">About <span className="text-blue-500">Me</span></h2>
-        </div>
-        <img src="bw_cutout.png" alt="" className="ml-6 h-[400px]" />
-      </div>
+    <div className="animate-slideright flex flex-col md:flex-row mb-8 px-8 pb-10 md:pb-0" id="resume">
       <div className="w-full">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="whitespace-nowrap uppercase tracking-[.4em] font-semibold">About Me</h2>
@@ -49,7 +44,8 @@ const AboutResume = () => {
               <p>+951 227 3742</p>
             </div>
           </div>
-          <button type="button" className="fadeBtn hover:animate-makeItfadeIn font-medium uppercase w-1/2 border border-gray-800 p-3">
+          <Socials />
+          <button type="button" className="fadeBtn hover:animate-makeItfadeIn font-medium uppercase border w-64 border-gray-800 p-3 dark:animate-none dark:hover:bg-white dark:hover:text-black">
             <a href="ksf_resume_new.pdf" download="ksf-resume">
               Download Resume
             </a>

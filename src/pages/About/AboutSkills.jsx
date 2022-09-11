@@ -5,7 +5,7 @@ import { images } from '../../constants';
 const AboutSkills = ({ flip }) => {
   console.log('test');
   return (
-    <div className={`animate-slideleft flex flex-col ${flip ? 'md:flex-row-reverse' : 'md:flex-row'} px-8 pb-10 md:pb-0`}>
+    <div className={`animate-slideleft flex flex-col ${flip ? 'md:flex-row-reverse' : 'md:flex-row'} px-8 pb-10 md:pb-0`} id="skills">
       <div className="hidden w-full lg:flex flex-col items-center animate-slowfade gap-4 uppercase">
         <div className="relative flex items-center justify-center">
           <h2 className="text-5xl tracking-[.1em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Technologies</h2>

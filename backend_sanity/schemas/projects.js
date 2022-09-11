@@ -25,20 +25,28 @@ export default {
       type: "string",
     },
     {
-      name: "images",
-      title: "Images",
-      type: "array",
-      of: [
-        {
-          name: "imgUrl",
-          title: "ImageUrl",
-          type: "image",
-          options: {
-            hotspot: true,
-          },
-        },
-      ],
+      name: "imgUrl",
+      title: "ImageUrl",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     },
+    // {
+    //   name: "images",
+    //   title: "Images",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       name: "imgUrl",
+    //       title: "ImageUrl",
+    //       type: "image",
+    //       options: {
+    //         hotspot: true,
+    //       },
+    //     },
+    //   ],
+    // },
     {
       name: "video",
       title: "Video",

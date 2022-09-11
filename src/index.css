@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -60,6 +61,9 @@
   }
   .contact-group{
     @apply col-span-12 lg:col-span-4 h-24 flex items-center justify-center flex-col border border-gray-200 gap-2;
+  }
+  .prj-group{
+    @apply h-64 w-64 flex items-center justify-center flex-col border border-gray-200;
   }
   .contact-input{
     @apply border border-gray-200 p-2 focus:outline-none dark:bg-black dark:placeholder:text-white;

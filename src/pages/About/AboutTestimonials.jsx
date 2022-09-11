@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 
+import { images } from '../../constants';
+
 const AboutTestimonials = () => {
   console.log('test');
   return (
@@ -7,13 +9,13 @@ const AboutTestimonials = () => {
       whileInView={{ x: [300, 0], opacity: [0, 1] }}
       transition={{ duration: 1.55, ease: 'easeOut' }}
     >
-      <div className="flex flex-col md:flex-row px-8 pb-10 md:pb-0">
+      <div className="flex flex-col md:flex-row px-8 pb-10 md:pb-0" id="testimonials">
         <div className="hidden w-full lg:flex flex-col items-center animate-slowfade gap-4 uppercase">
           <div className="relative flex items-center justify-center">
             <h2 className="text-5xl tracking-[.5em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Resume</h2>
             <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">About Me</h2>
           </div>
-          <img src="family2.png" alt="" className="ml-24" />
+          <img src={images.graphql} alt="" />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-4 mb-12">
@@ -56,7 +58,6 @@ const AboutTestimonials = () => {
         </div>
       </div>
     </motion.div>
-
   );
 };
 
