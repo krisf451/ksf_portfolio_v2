@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ProjectModal from './ProjectModal';
 
 const ProjectCard = ({ project }) => {
-  // const [toggle, setToggle] = useState(false);
+  console.log(project);
   const [isHovered, setIsHovered] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
       onClick={handleToggle}
       className="flex w-[450px] h-[300px] cursor-pointer p-4 relative"
     >
-      <ProjectModal open={open} setOpen={setOpen} project={project} />
+      <ProjectModal project={project} open={open} setOpen={setOpen} />
       <AnimatePresence>
         {isHovered && (
           <motion.div

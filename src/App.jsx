@@ -14,6 +14,7 @@ const App = () => {
 
   useEffect(() => {
     const query = `*[_type == "projects"]{
+      _id,
       title,
       description,
       tags,

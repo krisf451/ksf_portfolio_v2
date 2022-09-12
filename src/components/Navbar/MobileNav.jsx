@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { MdDarkMode } from 'react-icons/md';
@@ -7,16 +7,39 @@ import { BsFillSunFill } from 'react-icons/bs';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { Example } from './Example';
 
 const MobileNav = ({ menus }) => {
   const [toggle, setToggle] = useState(false);
   const [darkmode, setDarkmode] = useDarkMode();
+
+  useEffect(() => {
+    const closeMobileMenu = (e) => {
+      console.log('hi', e.target.id);
+      if (e.target.id !== 'mobile-menu' && e.target.id !== 'mobile-links' && e.target.id !== 'menu-btn') {
+        setToggle(false);
+      }
+    };
+
+    window.addEventListener('click', closeMobileMenu);
+    return () => {
+      window.removeEventListener('click', closeMobileMenu);
+    };
+  }, []);
+
+  const handleToggle = (e) => {
+    e.stopPropagation();
+    setToggle(true);
+  };
+
   return (
     <div className="md:hidden relative flex w-full justify-between px-4 items-center h-10">
+      {/* <Example />
+      <h1 /> */}
       <Link to="/about">
         <h3 className="text-xl customSlideUp uppercase">Kristian F.</h3>
       </Link>
-      <AiOutlineMenu className={`${toggle && 'hidden'} cursor-pointer text-[1.6rem] customSlideUp z-1`} id="menu-btn" onClick={() => setToggle(true)} />
+      <AiOutlineMenu className={`${toggle && 'hidden'} cursor-pointer text-[1.6rem] customSlideUp z-1`} id="menu-btn" onClick={handleToggle} />
       <AnimatePresence mode="wait">
         {toggle && (
         <motion.div

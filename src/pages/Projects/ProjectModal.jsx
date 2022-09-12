@@ -4,9 +4,10 @@ import { Dialog, Transition } from '@headlessui/react';
 
 const ProjectModal = ({ open, setOpen, project }) => {
   const videoRef = useRef(null);
+
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
+      <Dialog as="div" className="relative z-10" onClose={() => setOpen(false)}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -34,10 +35,10 @@ const ProjectModal = ({ open, setOpen, project }) => {
                 <div className="flex flex-col items-center pr-4 gap-4 w-full p-4">
                   <h3 className="animate-slideup text-3xl tracking-wider uppercase underline">{project.title}</h3>
                   <div className="flex gap-2 my-2 font-medium">
-                    <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 dark:border-white dark:text-white rounded-sm border border-gray-300">
+                    <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 rounded-sm border border-gray-300">
                       <a href={project?.codeLink} target="_blank" rel="noreferrer">{project.codeLink ? 'Code' : 'N/A'}</a>
                     </button>
-                    <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 dark:border-white dark:text-white rounded-sm border border-gray-300">
+                    <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 rounded-sm border border-gray-300">
                       <a href={project?.projectLink} target="_blank" rel="noreferrer">Live</a>
                     </button>
                   </div>
