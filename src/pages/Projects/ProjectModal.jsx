@@ -21,7 +21,7 @@ const ProjectModal = ({ open, setOpen, project }) => {
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -35,10 +35,10 @@ const ProjectModal = ({ open, setOpen, project }) => {
                 <div className="flex flex-col items-center pr-4 gap-4 w-full p-4">
                   <h3 className="animate-slideup text-3xl tracking-wider uppercase underline">{project.title}</h3>
                   <div className="flex gap-2 my-2 font-medium">
-                    <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 rounded-sm border border-gray-300">
+                    <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 rounded-sm border border-gray-300 focus:outline-none">
                       <a href={project?.codeLink} target="_blank" rel="noreferrer">{project.codeLink ? 'Code' : 'N/A'}</a>
                     </button>
-                    <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 rounded-sm border border-gray-300">
+                    <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 rounded-sm border border-gray-300 focus:outline-none">
                       <a href={project?.projectLink} target="_blank" rel="noreferrer">Live</a>
                     </button>
                   </div>
