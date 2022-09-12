@@ -20,11 +20,11 @@ const MobileNav = ({ menus }) => {
       <AnimatePresence mode="wait">
         {toggle && (
         <motion.div
-          whileInView={{ x: [200, 0] }}
+          whileInView={{ x: [200, 0], opacity: [0, 1] }}
           transition={{ duration: 0.35, ease: 'easeInOut' }}
           exit={{ x: [0, 100], opacity: [1, 0] }}
           id="mobile-menu"
-          className="fixed top-0 bottom-0 right-0 z-[50] w-[50%] h-screen flex flex-col justify-end items-end bg-white dark:bg-gray-900 dark:text-white shadow-xl"
+          className="fixed top-0 bottom-0 right-0 z-[50] w-[60%] h-screen flex flex-col justify-end items-end bg-white dark:bg-gray-900 dark:text-white shadow-xl"
         >
           <AiOutlineClose onClick={() => setToggle(false)} className="customSlideUp text-[2rem] cursor-pointer mt-8 mr-6" />
           <div className="flex items-center justify-center w-full py-10 text-3xl cursor-pointer">
