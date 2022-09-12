@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 import Socials from '../../components/Socials';
-import ProjectCardTest from './ProjectCardTest';
+import ProjectCard from './ProjectCard';
 import AnimatePage from '../../components/AnimatePage';
 
 const Projects = ({ projects }) => (
@@ -35,9 +35,9 @@ const Projects = ({ projects }) => (
           </div>
           <h3 className="text-xl text-gray-600 text-center">“The three great essentials to achieve anything worthwhile are, first, hard work; second, stick-to-itiveness; third, common sense.”</h3>
         </div>
-        <div className="flex flex-col gap-4 justify-center items-center md:items-start md:flex-row md:flex-wrap h-[calc(100vh-200px)] overflow-y-scroll p-4">
+        <div className="flex flex-col gap-4 justify-start items-center h-[calc(100vh-200px)] overflow-y-scroll">
           {projects.map((project, i) => (
-            <ProjectCardTest key={i} project={project} />
+            <ProjectCard key={i} project={project} />
           ))}
         </div>
       </div>

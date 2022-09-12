@@ -1,37 +1,41 @@
-/* eslint-disable jsx-a11y/media-has-caption */
-import { useRef } from 'react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+import ProjectModal from './ProjectModal';
 
 const ProjectCard = ({ project }) => {
-  const videoRef = useRef(null);
+  // const [toggle, setToggle] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleToggle = () => {
+    setOpen(true);
+    setIsHovered(false);
+  };
+
   return (
-    <div className="prj-group">
-      <div className="flex flex-col pr-4 gap-4 w-full p-4">
-        <h3 className="animate-slideup text-3xl tracking-wider uppercase underline">{project.title}</h3>
-        <div className="flex gap-2 my-2 font-medium">
-          <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 dark:border-white dark:text-white rounded-sm border border-gray-300">
-            <a href={project?.codeLink} target="_blank" rel="noreferrer">{project.codeLink ? 'Code' : 'N/A'}</a>
-          </button>
-          <button type="button" className="fadeBtn hover:animate-makeItfadeIn py-2 px-4 dark:border-white dark:text-white rounded-sm border border-gray-300">
-            <a href={project?.projectLink} target="_blank" rel="noreferrer">Live</a>
-          </button>
-        </div>
-        <p>{project.description}</p>
-        <div className="text-gray-400 dark:text-gray-600 flex flex-wrap">
-          {project.tags.map((tag, i) => (
-            <span key={i}>#{tag}</span>
-          ))}
-        </div>
-      </div>
-      <div className="p-4">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          src={project.video.asset.url}
-          className="object-contain"
-        />
-      </div>
-    </div>
+    <motion.div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      whileTap={{ scale: 0.95 }}
+      onClick={handleToggle}
+      className="flex w-[450px] h-[300px] cursor-pointer p-4 relative"
+    >
+      <ProjectModal open={open} setOpen={setOpen} project={project} />
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            whileInView={{ opacity: [0.5, 1] }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+            exit={{ opacity: [1, 0] }}
+            className="w-full h-full bg-black absolute inset-0 flex items-center justify-center"
+          >
+            <p className="animate-slidedown text-white tracking-[.4em] text-xl pl-4">{project.title}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <img src={project?.imgUrl?.asset?.url} alt="" className="h-full w-full object-cover" />
+    </motion.div>
   );
 };
 
