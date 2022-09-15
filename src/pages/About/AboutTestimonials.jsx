@@ -1,11 +1,13 @@
 /* eslint-disable react/no-unknown-property */
 import { motion } from 'framer-motion';
 
-const AboutTestimonials = () => (
+import TestimonialSlider from './TestimonialSlider';
+
+const AboutTestimonials = ({ testimonials }) => (
   <motion.div
     whileInView={{ opacity: [0, 1], x: [-100, 0] }}
     transition={{ duration: 1, staggerChildren: 0.5 }}
-    className="animate-slideright flex flex-col md:flex-row mb-8 px-8 pb-10"
+    className="animate-slideright flex flex-col md:flex-row mb-8 px-8 pb-10 overflow-hidden"
     id="testimonials"
   >
     <div className="w-full">
@@ -29,19 +31,14 @@ const AboutTestimonials = () => (
           whileInView={{ opacity: [0, 1], y: [20, 0] }}
           transition={{ duration: 1, ease: 'linear' }}
           className="w-full leading-6 animate-slideleft text-center sm:text-left"
-        >Hello there! My name is <span className="font-semibold">Teamwork</span>.
-          Something about some of the teams I have worked on
-          <br /><br />
-          I pride myself in my work ethic and ability to be efficient. I have a high level of patience,
-          a competitive mindset, and an open mind toward constructive feedback. Please feel free to reach out if you want to connect or know about any interesting hiring opporitunities.
+        ><span className="font-semibold">#Teamwork</span>.
         </motion.p>
         <motion.div
           whileInView={{ opacity: [0, 1], x: [20, 0] }}
           transition={{ duration: 0.6, ease: 'linear' }}
           className="w-full flex gap-6 text-sm sm:text-lg"
         >
-          testimonial slider goes here
-
+          <TestimonialSlider testimonials={testimonials} />
         </motion.div>
       </div>
     </div>

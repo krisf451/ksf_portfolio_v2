@@ -6,10 +6,8 @@ import AnimatePage from '../../components/AnimatePage';
 const Home = () => {
   const text1 = 'Hi there,';
   const text2 = 'My name is';
-  const text3 = 'Kristian Fulkerson';
   const letters1 = Array.from(text1);
   const letters2 = Array.from(text2);
-  const letters3 = Array.from(text3);
 
   const pContainer = {
     hidden: {
@@ -105,7 +103,7 @@ const Home = () => {
           animate="visible"
           className="text-3xl md:text-[40px] lg:text-[55px] xl:text-[65px] font-semibold"
         >
-          & I'm A <span className="text-blue-700">Full-Stack</span><br className="sm:hidden" /> Web Developer
+          &amp; I&apos;m A <span className="text-blue-700">Full-Stack</span><br className="sm:hidden" /> Web Developer
         </motion.p>
         <motion.button
           variants={extraText}

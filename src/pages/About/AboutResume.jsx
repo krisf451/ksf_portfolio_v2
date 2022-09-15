@@ -34,7 +34,7 @@ const AboutResume = () => (
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           className="w-full leading-6 animate-slideleft text-center sm:text-left"
         >Hello there! My name is<span className="font-semibold"> Kristian Fulkerson</span>.
-          I am currently working as a full-stack web developer and have always had a passion for problem solving and development.
+          I am currently working professionally as a software engineer and have always had a passion for problem solving and development.
           When I&apos;m not coding personal projects, building new features at work, or learning new technologies
           I prefer to spend most of my time with family either playing sports or just relaxing together.
           <br /><br />

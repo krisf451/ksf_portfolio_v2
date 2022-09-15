@@ -32,3 +32,31 @@ export const allSkillsQuery = `*[_type == "skills"]{
   },
 }
 `;
+
+export const allExperiencesQuery = `*[_type == "workExperience"]{
+  _id,
+  company,
+  title,
+  desc,
+  logo{
+    asset->{
+      _id,
+      url
+    }
+  },
+}
+`;
+
+export const allTestimonialsQuery = `*[_type == "testimonials"]{
+  _id,
+  name,
+  company,
+  feedback,
+  photo{
+    asset->{
+      _id,
+      url
+    }
+  },
+}
+`;

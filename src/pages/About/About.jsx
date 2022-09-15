@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import AnimatePage from '../../components/AnimatePage';
 import AboutResume from './AboutResume';
@@ -9,7 +9,7 @@ import AboutExperience from './AboutExperience';
 import AboutTestimonials from './AboutTestimonials';
 import AboutNav from './AboutNav';
 import { client } from '../../client';
-import { allSkillsQuery } from '../../utils/queries';
+import { allSkillsQuery, allExperiencesQuery, allTestimonialsQuery } from '../../utils/queries';
 
 const headers = [
   { id: 1, bgLabel: 'Resume', label: 'About Me', route: '#about' },
@@ -18,40 +18,34 @@ const headers = [
   { id: 4, bgLabel: 'Testimonials', label: 'My value', route: '#testimonials' },
 ];
 
+const heroImages = [
+  { id: 6, src: 'about1.jpeg' },
+  { id: 7, src: 'about.jpeg' },
+];
+
 const About = () => {
   const [activeHeader, setActiveHeader] = useState(headers[0]);
+  const [activeImage, setActiveImage] = useState(heroImages[0]);
   const [skills, setSkills] = useState([]);
+  const [experiences, setExperiences] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
   const location = useLocation();
 
-  useEffect(() => {
-    const query = allSkillsQuery;
+  console.log(testimonials);
 
-    client.fetch(query).then((data) => setSkills(data));
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev.id === 6 ? heroImages[1] : heroImages[0]));
+    }, 10000);
+
+    return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const { scrollY } = window;
-  //     const about = document.querySelector('#about');
-  //     const skills = document.querySelector('#skills');
-  //     const experience = document.querySelector('#experience');
-  //     const testimonials = document.querySelector('#testimonials');
-
-  //     if (scrollY >= about.offsetTop && scrollY < skills.offsetTop) {
-  //       setActiveHeader(headers[0]);
-  //     } else if (scrollY >= skills.offsetTop && scrollY < experience.offsetTop) {
-  //       setActiveHeader(headers[1]);
-  //     } else if (scrollY >= experience.offsetTop && scrollY < testimonials.offsetTop) {
-  //       setActiveHeader(headers[2]);
-  //     } else if (scrollY >= testimonials.offsetTop) {
-  //       setActiveHeader(headers[3]);
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
+  useEffect(() => {
+    client.fetch(allSkillsQuery).then((data) => setSkills(data));
+    client.fetch(allExperiencesQuery).then((data) => setExperiences(data));
+    client.fetch(allTestimonialsQuery).then((data) => setTestimonials(data));
+  }, []);
 
   useEffect(() => {
     if (location.hash === '#about') {
@@ -69,23 +63,31 @@ const About = () => {
     <AnimatePage>
       <div className="flex items-start">
         <div className="hidden w-full lg:flex flex-col items-center uppercase animate-slowfade justify-center mx-2">
-          <div className="relative flex items-center justify-center flex-col">
+          <motion.div
+            key={activeHeader.id}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}
+            className="relative flex items-center justify-center flex-col"
+          >
             <h2 className="text-5xl tracking-[.3em] whitespace-nowrap text-gray-300 dark:text-gray-600 animate-slideup">{activeHeader.bgLabel}</h2>
             <h2 className="absolute top-2 text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">
               {activeHeader?.label?.split(' ')[0]} <span className="text-blue-500">{activeHeader?.label?.split(' ')[1] && activeHeader?.label?.split(' ')[1]}</span>
             </h2>
             <h3 className="text-lg tracking-[.2em]">Get to know me...</h3>
-            <AboutNav />
-          </div>
-          <AnimatePresence>
-            <motion.img
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              src="about1.jpeg"
-              alt=""
-              className="rounded-md w-[500px] lg:w-[700px] h-[500px] mt-12 hover:shadow-2xl shadow-lg"
-            />
-          </AnimatePresence>
+          </motion.div>
+          <AboutNav />
+
+          <motion.img
+            key={activeImage.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.6 }}
+            exit={{ opacity: 0 }}
+            src={activeImage.src}
+            alt=""
+            className="rounded-md w-[85%] h-[500px] mt-12 hover:shadow-2xl shadow-lg"
+          />
         </div>
 
         <div className="lg:overflow-y-scroll lg:h-[calc(100vh-120px)] flex flex-col w-full h-full">
@@ -99,10 +101,8 @@ const About = () => {
           <div className="w-full h-full">
             <AboutResume />
             <AboutSkills skills={skills} />
-            <AboutExperience />
-            <AboutTestimonials />
-            {/*
-            */}
+            <AboutExperience experiences={experiences} />
+            <AboutTestimonials testimonials={testimonials} />
           </div>
         </div>
       </div>
