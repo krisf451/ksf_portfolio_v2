@@ -9,8 +9,8 @@ export default {
       type: "string",
     },
     {
-      name: "bgColor",
-      title: "BgColor",
+      name: "link",
+      title: "Link",
       type: "string",
     },
     {

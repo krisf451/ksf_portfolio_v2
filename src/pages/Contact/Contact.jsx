@@ -70,7 +70,7 @@ const Contact = () => {
               <h3 className="text-xl text-gray-600 mb-3">DON&apos;T BE SHY !</h3>
               <Socials />
             </div>
-            <p className="w-3/4 text-center mt-2">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+            <p className="w-full sm:w-3/4 text-center mt-2">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
           </div>
           <div className="grid grid-cols-12 gap-4 text-gray-600 dark:text-gray-300 text-sm">
             <div className="contact-group whitespace-nowrap truncate">

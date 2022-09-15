@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import AnimatePage from '../../components/AnimatePage';
 import AboutResume from './AboutResume';
@@ -64,14 +65,10 @@ const About = () => {
     }
   }, [location]);
 
-  useEffect(() => {
-    console.log('here');
-  }, [activeHeader]);
-
   return (
     <AnimatePage>
-      <div className="flex">
-        <div className="hidden w-full lg:flex flex-col items-center uppercase animate-slowfade justify-center">
+      <div className="flex items-start">
+        <div className="hidden w-full lg:flex flex-col items-center uppercase animate-slowfade justify-center mx-2">
           <div className="relative flex items-center justify-center flex-col">
             <h2 className="text-5xl tracking-[.3em] whitespace-nowrap text-gray-300 dark:text-gray-600 animate-slideup">{activeHeader.bgLabel}</h2>
             <h2 className="absolute top-2 text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">
@@ -80,21 +77,32 @@ const About = () => {
             <h3 className="text-lg tracking-[.2em]">Get to know me...</h3>
             <AboutNav />
           </div>
-          <img src="bw_cutout.png" alt="" className="h-full object-contain" />
+          <AnimatePresence>
+            <motion.img
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              src="about1.jpeg"
+              alt=""
+              className="rounded-md w-[500px] lg:w-[700px] h-[500px] mt-12 hover:shadow-2xl shadow-lg"
+            />
+          </AnimatePresence>
         </div>
 
-        <div className="lg:overflow-y-scroll lg:h-[calc(100vh-120px)]">
-          <div className="relative w-full lg:hidden flex-col items-center gap-4 uppercase animate-slowfade">
-            <div className="relative flex items-center justify-center flex-col">
-              <h3 className="text-lg tracking-[.2em]">Get to know me...</h3>
-              <AboutNav />
+        <div className="lg:overflow-y-scroll lg:h-[calc(100vh-120px)] flex flex-col w-full h-full">
+          <div className="lg:hidden uppercase animate-slowfade">
+            <h3 className="text-lg tracking-[.2em] text-center hidden sm:block">Get to know me...</h3>
+            <div className="w-full bg-black">
+              <img src="ksf_logo.png" alt="" className="w-full h-[50px] object-contain sm:hidden" />
             </div>
+            <AboutNav />
           </div>
-          <div className="">
+          <div className="w-full h-full">
             <AboutResume />
             <AboutSkills skills={skills} />
             <AboutExperience />
             <AboutTestimonials />
+            {/*
+            */}
           </div>
         </div>
       </div>

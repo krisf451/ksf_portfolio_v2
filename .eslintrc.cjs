@@ -18,7 +18,10 @@ module.exports = {
     'react',
   ],
   rules: {
-    'max-len': 0,
+    'max-len': [
+      2,
+      250,
+    ],
     'jsx-a11y/label-has-associated-control': 0,
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 0,

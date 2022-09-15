@@ -23,7 +23,7 @@ export const allProjectsQuery = `*[_type == "projects"]{
 export const allSkillsQuery = `*[_type == "skills"]{
   _id,
   name,
-  bgColor,
+  link,
   icon{
     asset->{
       _id,
