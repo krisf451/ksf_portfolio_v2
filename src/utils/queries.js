@@ -1,5 +1,34 @@
-export const allProjectsQuery = () => {
-  const query = '*[_type == "projects"]';
+export const allProjectsQuery = `*[_type == "projects"]{
+  _id,
+  title,
+  description,
+  tags,
+  projectLink,
+  codeLink,
+  imgUrl{
+    asset->{
+      _id,
+      url
+    }
+  },
+  video{
+    asset->{
+      _id,
+      url
+    }
+  },
+}
+`;
 
-  return query;
-};
+export const allSkillsQuery = `*[_type == "skills"]{
+  _id,
+  name,
+  bgColor,
+  icon{
+    asset->{
+      _id,
+      url
+    }
+  },
+}
+`;

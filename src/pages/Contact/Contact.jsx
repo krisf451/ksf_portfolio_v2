@@ -64,10 +64,10 @@ const Contact = () => {
             />
           </div>
           <div className="lg:hidden relative flex flex-col items-center justify-center uppercase mb-6">
-            <h2 className="text-5xl tracking-[.1em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
-            <h2 className="absolute top-2 text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s <span className="text-blue-500">chat</span></h2>
-            <div className="flex mt-4">
-              <h3 className="text-xl text-gray-600 mr-6">DON&apos;T BE SHY !</h3>
+            <h2 className="text-4xl tracking-[.1em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Contact Me</h2>
+            <h2 className="absolute top-1.5 text-xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">Let&apos;s <span className="text-blue-500">chat</span></h2>
+            <div className="flex flex-col items-center my-4">
+              <h3 className="text-xl text-gray-600 mb-3">DON&apos;T BE SHY !</h3>
               <Socials />
             </div>
             <p className="w-3/4 text-center mt-2">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
