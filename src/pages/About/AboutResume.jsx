@@ -25,8 +25,12 @@ const AboutResume = () => (
       <div className="flex text-sm flex-col gap-4">
         <div className="w-full lg:hidden flex-col items-center animate-slowfade gap-4 uppercase">
           <div className="relative flex items-center justify-center">
-            <h2 className="text-4xl sm:text-5xl tracking-[.5em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Resume</h2>
-            <h2 className="absolute text-xl sm:text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">About <span className="text-blue-500">Me</span></h2>
+            <h2 className="text-4xl sm:text-5xl tracking-[.5em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">
+              Resume
+            </h2>
+            <h2 className="absolute text-xl sm:text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">
+              About <span className="text-blue-500">Me</span>
+            </h2>
           </div>
         </div>
         <motion.p

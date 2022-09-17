@@ -18,28 +18,12 @@ const headers = [
   { id: 4, bgLabel: 'Testimonials', label: 'My value', route: '#testimonials' },
 ];
 
-const heroImages = [
-  { id: 6, src: 'about1.jpeg' },
-  { id: 7, src: 'about.jpeg' },
-];
-
 const About = () => {
   const [activeHeader, setActiveHeader] = useState(headers[0]);
-  const [activeImage, setActiveImage] = useState(heroImages[0]);
   const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
   const location = useLocation();
-
-  console.log(testimonials);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveImage((prev) => (prev.id === 6 ? heroImages[1] : heroImages[0]));
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     client.fetch(allSkillsQuery).then((data) => setSkills(data));
@@ -48,14 +32,21 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-    if (location.hash === '#about') {
-      setActiveHeader(headers[0]);
-    } else if (location.hash === '#skills') {
-      setActiveHeader(headers[1]);
-    } else if (location.hash === '#experience') {
-      setActiveHeader(headers[2]);
-    } else if (location.hash === '#testimonials') {
-      setActiveHeader(headers[3]);
+    switch (location.hash) {
+      case '#about':
+        setActiveHeader(headers[0]);
+        break;
+      case '#skills':
+        setActiveHeader(headers[1]);
+        break;
+      case '#experience':
+        setActiveHeader(headers[2]);
+        break;
+      case '#testimonials':
+        setActiveHeader(headers[3]);
+        break;
+      default:
+        setActiveHeader(headers[0]);
     }
   }, [location]);
 
@@ -77,17 +68,7 @@ const About = () => {
             <h3 className="text-lg tracking-[.2em]">Get to know me...</h3>
           </motion.div>
           <AboutNav />
-
-          <motion.img
-            key={activeImage.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.6 }}
-            exit={{ opacity: 0 }}
-            src={activeImage.src}
-            alt=""
-            className="rounded-md w-[85%] h-[500px] mt-12 hover:shadow-2xl shadow-lg"
-          />
+          <img src="about1.jpeg" alt="about" className="rounded-md w-[85%] h-[500px] mt-12 hover:shadow-2xl shadow-lg" />
         </div>
 
         <div className="lg:overflow-y-scroll lg:h-[calc(100vh-120px)] flex flex-col w-full h-full">

@@ -21,8 +21,12 @@ const AboutExperience = ({ experiences }) => (
       <div className="flex text-sm flex-col gap-4">
         <div className="w-full lg:hidden flex-col items-center animate-slowfade gap-4 uppercase">
           <div className="relative flex items-center justify-center">
-            <h2 className="text-4xl sm:text-5xl tracking-[.1em] sm:tracking-[.2em] text-gray-300 dark:text-gray-600 opacity-60">Professional</h2>
-            <h2 className="absolute text-xl sm:text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">My <span className="text-blue-500">Jobs</span></h2>
+            <h2 className="text-4xl sm:text-5xl tracking-[.1em] sm:tracking-[.2em] text-gray-300 dark:text-gray-600 opacity-60">
+              Professional
+            </h2>
+            <h2 className="absolute text-xl sm:text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">
+              My <span className="text-blue-500">Jobs</span>
+            </h2>
           </div>
         </div>
         {
@@ -33,7 +37,8 @@ const AboutExperience = ({ experiences }) => (
                 whileInView={{ opacity: [0, 1], y: [-20, 0] }}
                 transition={{ duration: 0.7, ease: 'linear' }}
                 className="w-full leading-6 animate-slideleft text-center sm:text-left"
-              >After graduating from Bloomtech&apos;s Full-stack web developer bootcamp I soon landed my first job at <span className="font-semibold">Phoenix Capital Group</span> where I still work today.
+              >After graduating from Bloomtech&apos;s Full-stack web developer bootcamp I soon landed my first job at
+                <span className="font-semibold">Phoenix Capital Group</span> where I still work today.
                 <br /><br />
                 {experience.desc}
               </motion.p>

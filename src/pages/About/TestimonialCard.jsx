@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const TestimonialCard = ({ testimonial }) => {
-  console.log('test');
   const [showMore, setShowMore] = useState(false);
   return (
     <div>
