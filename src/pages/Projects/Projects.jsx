@@ -41,7 +41,7 @@ const Projects = ({ projects }) => {
             </div>
             <h3 className="text-lg text-gray-600 text-center">“The three great essentials to achieve anything worthwhile are, first, hard work; second, stick-to-itiveness; third, common sense.”</h3>
           </div>
-          <div className="flex flex-col gap-4 justify-start items-center">
+          <div className="grid grid-cols-12 gap-4">
             {projects.map((project, i) => (
               <ProjectCard key={i} project={project} setActiveProject={setActiveProject} setOpen={setOpen} />
             ))}

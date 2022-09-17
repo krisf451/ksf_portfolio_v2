@@ -16,7 +16,7 @@ const ProjectCard = ({ project, setActiveProject, setOpen }) => {
       onMouseLeave={() => setIsHovered(false)}
       whileTap={{ scale: 0.95 }}
       onClick={handleToggle}
-      className="flex w-full bg-gray-50 dark:bg-gray-900 h-[400px] lg:h-[100px] rouned-lg shadow-md items-center justify-center cursor-pointer p-4 relative"
+      className="flex w-full bg-gray-50 dark:bg-gray-900 h-[235px] rounded-lg shadow-md cursor-pointer p-4 relative col-span-12 md:col-span-6"
     >
       <AnimatePresence>
         {isHovered && (
