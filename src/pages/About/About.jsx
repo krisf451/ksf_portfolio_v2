@@ -1,31 +1,94 @@
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 import AnimatePage from '../../components/AnimatePage';
-import AboutSkills from './AboutSkills';
 import AboutResume from './AboutResume';
+import AboutSkills from './AboutSkills';
+import AboutExperience from './AboutExperience';
 import AboutTestimonials from './AboutTestimonials';
 import AboutNav from './AboutNav';
+import { client } from '../../client';
+import { allSkillsQuery, allExperiencesQuery, allTestimonialsQuery } from '../../utils/queries';
 
-const About = () => (
-  <AnimatePage>
-    <div className="flex">
-      <div className="hidden w-full h-[calc(100vh-120px)] lg:flex flex-col items-center gap-4 uppercase animate-slowfade">
-        <div className="relative flex items-center justify-center flex-col">
-          <h2 className="text-5xl tracking-[.4em] whitespace-nowrap text-gray-300 dark:text-gray-600">Resume</h2>
-          <h2 className="absolute top-2 text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">About <span className="text-blue-500">Me</span></h2>
-          <h3 className="text-lg tracking-[.2em]">Get to know me...</h3>
+const headers = [
+  { id: 1, bgLabel: 'Resume', label: 'About Me', route: '#about' },
+  { id: 2, bgLabel: 'Technology', label: 'My Skills', route: '#skills' },
+  { id: 3, bgLabel: 'Experience', label: 'My Jobs', route: '#experience' },
+  { id: 4, bgLabel: 'Testimonials', label: 'My value', route: '#testimonials' },
+];
+
+const About = () => {
+  const [activeHeader, setActiveHeader] = useState(headers[0]);
+  const [skills, setSkills] = useState([]);
+  const [experiences, setExperiences] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const location = useLocation();
+
+  useEffect(() => {
+    client.fetch(allSkillsQuery).then((data) => setSkills(data));
+    client.fetch(allExperiencesQuery).then((data) => setExperiences(data));
+    client.fetch(allTestimonialsQuery).then((data) => setTestimonials(data));
+  }, []);
+
+  useEffect(() => {
+    switch (location.hash) {
+      case '#about':
+        setActiveHeader(headers[0]);
+        break;
+      case '#skills':
+        setActiveHeader(headers[1]);
+        break;
+      case '#experience':
+        setActiveHeader(headers[2]);
+        break;
+      case '#testimonials':
+        setActiveHeader(headers[3]);
+        break;
+      default:
+        setActiveHeader(headers[0]);
+    }
+  }, [location]);
+
+  return (
+    <AnimatePage>
+      <div className="flex items-start">
+        <div className="hidden w-full lg:flex flex-col items-center uppercase animate-slowfade justify-center mx-2">
+          <motion.div
+            key={activeHeader.id}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}
+            className="relative flex items-center justify-center flex-col"
+          >
+            <h2 className="text-5xl tracking-[.3em] whitespace-nowrap text-gray-300 dark:text-gray-600 animate-slideup">{activeHeader.bgLabel}</h2>
+            <h2 className="absolute top-2 text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">
+              {activeHeader?.label?.split(' ')[0]} <span className="text-blue-500">{activeHeader?.label?.split(' ')[1] && activeHeader?.label?.split(' ')[1]}</span>
+            </h2>
+            <h3 className="text-lg tracking-[.2em]">Get to know me...</h3>
+          </motion.div>
           <AboutNav />
+          <img src="about1.jpeg" alt="about" className="rounded-md w-[85%] h-[500px] mt-12 hover:shadow-2xl shadow-lg" />
         </div>
-        <img src="bw_cutout.png" alt="" className="h-full object-contain" />
-      </div>
-      <div className="overflow-y-scroll h-[calc(100vh-120px)]">
-        <div className="">
-          <AboutResume />
-          <AboutSkills flip />
-          <AboutTestimonials />
-        </div>
-      </div>
-    </div>
 
-  </AnimatePage>
-);
+        <div className="lg:overflow-y-scroll lg:h-[calc(100vh-120px)] flex flex-col w-full h-full">
+          <div className="lg:hidden uppercase animate-slowfade">
+            <h3 className="text-lg tracking-[.2em] text-center hidden sm:block">Get to know me...</h3>
+            <div className="w-full bg-black">
+              <img src="ksf_logo.png" alt="" className="w-full h-[50px] object-contain sm:hidden" />
+            </div>
+            <AboutNav />
+          </div>
+          <div className="w-full h-full">
+            <AboutResume />
+            <AboutSkills skills={skills} />
+            <AboutExperience experiences={experiences} />
+            <AboutTestimonials testimonials={testimonials} />
+          </div>
+        </div>
+      </div>
+    </AnimatePage>
+  );
+};
 
 export default About;

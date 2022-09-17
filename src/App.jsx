@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import { Home, About, Contact, Projects } from './pages';
 import { client } from './client';
 import Navbar from './components/Navbar/Navbar';
+import { allProjectsQuery } from './utils/queries';
 
 const App = () => {
   const location = useLocation();
@@ -13,27 +14,7 @@ const App = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const query = `*[_type == "projects"]{
-      _id,
-      title,
-      description,
-      tags,
-      projectLink,
-      codeLink,
-      imgUrl{
-        asset->{
-          _id,
-          url
-        }
-      },
-      video{
-        asset->{
-          _id,
-          url
-        }
-      },
-    }
-    `;
+    const query = allProjectsQuery;
 
     client.fetch(query).then((data) => setProjects(data));
   }, []);

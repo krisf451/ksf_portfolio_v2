@@ -7,7 +7,6 @@ import { BsFillSunFill } from 'react-icons/bs';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
-import { Example } from './Example';
 
 const MobileNav = ({ menus }) => {
   const [toggle, setToggle] = useState(false);
@@ -15,7 +14,6 @@ const MobileNav = ({ menus }) => {
 
   useEffect(() => {
     const closeMobileMenu = (e) => {
-      console.log('hi', e.target.id);
       if (e.target.id !== 'mobile-menu' && e.target.id !== 'mobile-links' && e.target.id !== 'menu-btn') {
         setToggle(false);
       }
@@ -34,8 +32,6 @@ const MobileNav = ({ menus }) => {
 
   return (
     <div className="md:hidden relative flex w-full justify-between px-4 items-center h-10">
-      {/* <Example />
-      <h1 /> */}
       <Link to="/about">
         <h3 className="text-xl customSlideUp uppercase">Kristian F.</h3>
       </Link>
@@ -43,7 +39,7 @@ const MobileNav = ({ menus }) => {
       <AnimatePresence mode="wait">
         {toggle && (
         <motion.div
-          whileInView={{ x: [200, 0], opacity: [0, 1] }}
+          whileInView={{ x: [100, 0], opacity: [0, 1] }}
           transition={{ duration: 0.35, ease: 'easeInOut' }}
           exit={{ x: [0, 100], opacity: [1, 0] }}
           id="mobile-menu"

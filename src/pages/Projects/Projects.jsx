@@ -36,12 +36,12 @@ const Projects = ({ projects }) => {
           </div>
           <div className="flex lg:hidden flex-col items-center animate-slowfade gap-4 mb-8">
             <div className="relative flex items-center justify-center uppercase">
-              <h2 className="text-6xl tracking-[.4em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Works</h2>
-              <h2 className="absolute text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">My <span className="text-blue-500">Projects</span></h2>
+              <h2 className="text-5xl tracking-[.4em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">Works</h2>
+              <h2 className="absolute text-xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">My <span className="text-blue-500">Projects</span></h2>
             </div>
-            <h3 className="text-xl text-gray-600 text-center">“The three great essentials to achieve anything worthwhile are, first, hard work; second, stick-to-itiveness; third, common sense.”</h3>
+            <h3 className="text-lg text-gray-600 text-center">“The three great essentials to achieve anything worthwhile are, first, hard work; second, stick-to-itiveness; third, common sense.”</h3>
           </div>
-          <div className="flex flex-col gap-4 justify-start items-center h-[calc(100vh-200px)] overflow-y-scroll">
+          <div className="grid grid-cols-12 gap-4 pb-6">
             {projects.map((project, i) => (
               <ProjectCard key={i} project={project} setActiveProject={setActiveProject} setOpen={setOpen} />
             ))}

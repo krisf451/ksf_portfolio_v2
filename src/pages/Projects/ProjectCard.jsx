@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ProjectCard = ({ project, setActiveProject, setOpen }) => {
-  console.log(project);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleToggle = () => {
@@ -17,7 +16,7 @@ const ProjectCard = ({ project, setActiveProject, setOpen }) => {
       onMouseLeave={() => setIsHovered(false)}
       whileTap={{ scale: 0.95 }}
       onClick={handleToggle}
-      className="flex w-full bg-gray-50 dark:bg-gray-900 min-h-[500px] max-h-[500px] rouned-lg shadow-md items-center justify-center cursor-pointer p-4 relative"
+      className="flex w-full bg-gray-50 dark:bg-gray-900 h-[235px] rounded-lg shadow-md cursor-pointer p-4 relative col-span-12 md:col-span-6"
     >
       <AnimatePresence>
         {isHovered && (
