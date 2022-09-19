@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <AnimatePage>
-      <motion.div className="flex flex-col justify-center items-start pl-8 md:pl-16 lg:pl-24 xl:pl-36 pt-32 sm:pt-56 overflow-hidden">
+      <motion.div className="flex flex-col justify-center items-start pl-6 md:pl-12 lg:pl-20 xl:pl-32 pt-32 sm:pt-56 overflow-hidden">
         <motion.p
           variants={HomePContainer}
           initial="hidden"
@@ -30,7 +30,7 @@ const Home = () => {
           variants={HomePContainer}
           initial="hidden"
           animate="visible"
-          className="text-3xl md:text-[50px] lg:text-[60px] xl:text-[75px] font-semibold py-4 lg:py-8 xl:py-12"
+          className="text-3xl md:text-[45px] lg:text-[60px] xl:text-[75px] font-semibold py-4 lg:py-8 xl:py-12"
         >
           {letters2.map((letter, index) => (
             <motion.span variants={HomePChild} key={index}>
@@ -41,7 +41,7 @@ const Home = () => {
             variants={HomeNameText}
             initial="hidden"
             animate="visible"
-            className="text-3xl md:text-[50px] lg:text-[60px] xl:text-[75px] font-semibold text-gray-800 dark:text-gray-500"
+            className="text-3xl md:text-[45px] lg:text-[60px] xl:text-[75px] font-semibold text-gray-800 dark:text-gray-500 whitespace-nowrap"
           > Kristian Fulkerson
           </motion.span>
         </motion.p>
