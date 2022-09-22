@@ -41,7 +41,7 @@ const Home = () => {
             variants={HomeNameText}
             initial="hidden"
             animate="visible"
-            className="text-3xl md:text-[45px] lg:text-[60px] xl:text-[75px] font-semibold text-gray-800 dark:text-gray-500 whitespace-nowrap"
+            className="text-3xl md:text-[45px] lg:text-[60px] xl:text-[75px] font-semibold text-gray-800 dark:text-gray-500"
           > Kristian Fulkerson
           </motion.span>
         </motion.p>

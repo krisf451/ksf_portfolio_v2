@@ -9,7 +9,7 @@ const AboutResume = () => (
   <motion.div
     whileInView={{ opacity: [0, 1], x: [-50, 0] }}
     transition={{ duration: 1, staggerChildren: 0.5 }}
-    className="animate-slideright flex flex-col md:flex-row mb-8 px-8 pb-8 md:pb-0"
+    className="animate-slideright flex flex-col md:flex-row mb-8 px-8 pb-8 md:pb-0 h-[calc(100vh-120px)]"
     id="about"
   >
     <div className="w-full">

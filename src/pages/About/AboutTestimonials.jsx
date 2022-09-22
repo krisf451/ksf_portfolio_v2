@@ -7,7 +7,7 @@ const AboutTestimonials = ({ testimonials }) => (
   <motion.div
     whileInView={{ opacity: [0, 1], x: [-100, 0] }}
     transition={{ duration: 1, staggerChildren: 0.5 }}
-    className="animate-slideright flex flex-col md:flex-row mb-8 px-8 pb-10 overflow-hidden"
+    className="animate-slideright flex flex-col md:flex-row mb-8 px-8 pb-10 overflow-hidden h-[calc(100vh-120px)]"
     id="testimonials"
   >
     <div className="w-full">
