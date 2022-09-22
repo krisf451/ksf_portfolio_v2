@@ -33,7 +33,7 @@ export const allSkillsQuery = `*[_type == "skills"]{
 }
 `;
 
-export const allExperiencesQuery = `*[_type == "workExperience"]{
+export const allExperiencesQuery = `*[_type == "workExperience"] | order(company desc){
   _id,
   company,
   title,

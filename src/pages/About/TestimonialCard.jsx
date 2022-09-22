@@ -15,7 +15,7 @@ const TestimonialCard = ({ testimonial }) => {
           exit={{ opacity: 0 }}
           type="button"
           onClick={() => setShowMore(false)}
-          className="p-4"
+          className="p-4 w-64 h-64"
         >
           <p className="h-32 overflow-y-scroll leading-8">&quot;{testimonial.feedback}&quot;</p>
         </motion.button>
@@ -29,7 +29,7 @@ const TestimonialCard = ({ testimonial }) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
           exit={{ opacity: 0 }}
-          className="flex flex-col items-center gap-4"
+          className="flex flex-col items-center gap-4 bg-gray-50 dark:bg-[#13131c] w-64 h-64 p-6 text-center rounded-lg shadow-md"
         >
           <img
             src={testimonial?.photo?.asset?.url}

@@ -89,10 +89,7 @@ const Contact = () => {
           <div className="grid grid-cols-12 gap-4 text-gray-600 dark:text-gray-300 text-sm">
             <div className="contact-group whitespace-nowrap truncate">
               <BiCurrentLocation className="text-xl" />
-              <p className="text-center">6140, Correll St
-                <br />
-                Riverside, CA 92504
-              </p>
+              <p className="text-center">Riverside, CA 92504</p>
             </div>
             <div className="contact-group">
               <AiOutlineMail className="text-xl" />

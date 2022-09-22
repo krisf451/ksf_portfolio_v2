@@ -64,6 +64,9 @@
   .contact-input{
     @apply border border-gray-200 p-2 focus:outline-none dark:bg-black dark:placeholder:text-white;
   }
+  .sidenav-circles{
+    @apply opacity-10 dark:opacity-100 hover:opacity-100 dark:hover:opacity-70 hover:scale-105 transition-all duration-300 ease-in-out;
+  }
 }
 
 

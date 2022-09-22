@@ -36,7 +36,7 @@ const MobileNav = ({ menus }) => {
       <Link to="/about">
         <h3 className="text-xl customSlideUp uppercase">Kristian F.</h3>
       </Link>
-      <AiOutlineMenu className={`${toggle && 'hidden'} cursor-pointer text-[1.6rem] customSlideUp z-1`} id="menu-btn" onClick={handleToggle} />
+      <AiOutlineMenu className={`${toggle && 'hidden'} cursor-pointer text-[1.6rem] customSlideUp z-30`} id="menu-btn" onClick={handleToggle} />
       <AnimatePresence mode="wait">
         {toggle && (
         <motion.div
@@ -44,13 +44,15 @@ const MobileNav = ({ menus }) => {
           transition={{ duration: 0.35, ease: 'easeInOut' }}
           exit={{ x: [0, 100], opacity: [1, 0] }}
           id="mobile-menu"
-          className="fixed top-0 bottom-0 right-0 z-[50] w-[60%] sm:w-[50%] h-screen flex flex-col justify-end items-end bg-white dark:bg-[#13131c] dark:text-white shadow-xl"
+          className="fixed top-0 bottom-0 right-0 z-[50] w-[70%] sm:w-[50%] h-screen flex flex-col justify-end items-end bg-white dark:bg-[#13131c] dark:text-white shadow-xl"
         >
-          <AiOutlineClose onClick={() => setToggle(false)} className="customSlideUp text-[2rem] cursor-pointer mt-8 mr-6" />
+          <p>
+            <AiOutlineClose onClick={() => setToggle(false)} className="customSlideUp text-[2rem] cursor-pointer mt-8 mr-6" />
+          </p>
           <div className="flex items-center justify-center w-full py-10 text-3xl cursor-pointer">
             {darkmode ? <BsFillSunFill className="animate-slowfade" onClick={() => setDarkmode((prev) => !prev)} /> : <MdDarkMode className="animate-slowfade" onClick={() => setDarkmode((prev) => !prev)} />}
           </div>
-          <div className="flex flex-col items-center justify-center w-full mb-6 tracking-[.1em] gap-4">
+          <div className="flex flex-col items-center justify-center mb-12 tracking-[.1em] gap-4 mx-auto">
             <img src="headshot1.png" alt="" className="object-fill h-[75px] w-[75px] rounded-full" />
             <p className="text-sm font-extrabold">Kristian Fulkerson</p>
             <p className="text-xs font-extrabold">Full-Stack Developer</p>

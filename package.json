@@ -18,10 +18,10 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.3.0",
     "react-icons": "^4.4.0",
-    "react-parallax-tilt": "^1.7.62",
     "react-router-dom": "^6.3.0",
     "sass": "^1.54.9",
     "swiper": "^8.3.2",
+    "typewriter-effect": "^2.19.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

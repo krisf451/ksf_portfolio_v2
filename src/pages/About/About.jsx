@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { BsCircleFill } from 'react-icons/bs';
 
 import AnimatePage from '../../components/AnimatePage';
 import AboutResume from './AboutResume';
@@ -65,13 +66,26 @@ const About = () => {
             <h2 className="absolute top-2 text-2xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">
               {activeHeader?.label?.split(' ')[0]} <span className="text-blue-500">{activeHeader?.label?.split(' ')[1] && activeHeader?.label?.split(' ')[1]}</span>
             </h2>
-            <h3 className="text-lg tracking-[.2em]">Get to know me...</h3>
           </motion.div>
           <AboutNav />
           <img src="about1.jpeg" alt="about" className="rounded-md w-[85%] h-[500px] mt-12 hover:shadow-2xl shadow-lg" />
         </div>
 
-        <div className="lg:overflow-y-scroll lg:h-[calc(100vh-120px)] flex flex-col w-full h-full">
+        <div className="lg:overflow-y-scroll lg:h-[calc(100vh-120px)] flex flex-col w-full h-full relative">
+          <div className="lg:hidden z-20 fixed h-screen flex flex-col items-center justify-center w-6 right-1 top-[-20px] bottom-0 gap-8 cursor-pointer text-[7px] text-[#13131c] dark:text-white">
+            <a href="#about">
+              <BsCircleFill className="sidenav-circles" />
+            </a>
+            <a href="#skills">
+              <BsCircleFill className="sidenav-circles" />
+            </a>
+            <a href="#experience">
+              <BsCircleFill className="sidenav-circles" />
+            </a>
+            <a href="#testimonials">
+              <BsCircleFill className="sidenav-circles" />
+            </a>
+          </div>
           <div className="lg:hidden uppercase animate-slowfade">
             <h3 className="text-lg tracking-[.2em] text-center hidden sm:block">Get to know me...</h3>
             <div className="w-full bg-black">
