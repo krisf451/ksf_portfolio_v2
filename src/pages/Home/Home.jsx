@@ -37,6 +37,7 @@ const Home = () => {
               {letter === ' ' ? '\u00A0' : letter}
             </motion.span>
           ))}
+          <br className="sm:hidden" />
           <motion.span
             variants={HomeNameText}
             initial="hidden"
