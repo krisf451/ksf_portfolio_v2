@@ -2,14 +2,13 @@
 import { motion } from 'framer-motion';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 
-import TestimonialSlider from './TestimonialSlider';
 import Testimonials from './Testimonials';
 
 const AboutTestimonials = ({ testimonials }) => (
   <motion.div
     whileInView={{ opacity: [0, 1], x: [-100, 0] }}
     transition={{ duration: 1, staggerChildren: 0.5 }}
-    className="animate-slideright flex flex-col md:flex-row px-8 md:h-screen lg:h-[calc(100vh-120px)] pb-6"
+    className="animate-slideright flex flex-col md:flex-row px-8 md:h-screen lg:h-[calc(100vh-120px)] pb-6 overflow-y-scroll"
     id="testimonials"
   >
     <div className="w-full">
@@ -33,14 +32,13 @@ const AboutTestimonials = ({ testimonials }) => (
           whileInView={{ opacity: [0, 1], y: [20, 0] }}
           transition={{ duration: 1, ease: 'linear' }}
           className="w-full leading-6 animate-slideleft text-center sm:text-left"
-        ><span className="font-semibold text-center block">#Teamwork</span>.
+        ><span className="font-semibold text-center block">#Teamwork</span>
         </motion.p>
         <motion.div
           whileInView={{ opacity: [0, 1], x: [20, 0] }}
           transition={{ duration: 0.6, ease: 'linear' }}
         >
           <Testimonials testimonials={testimonials} />
-          {/* <TestimonialSlider testimonials={testimonials} /> */}
         </motion.div>
       </div>
       <a href="#about" className="text-3xl">

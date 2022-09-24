@@ -29,7 +29,7 @@ const AboutSkills = ({ skills }) => (
         <motion.p
           whileInView={{ opacity: [0, 1], y: [20, 0] }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="w-full leading-6 md:leading-[50px] animate-slideleft text-center sm:text-left"
+          className="w-full leading-6 md:tracking-widest text-lg animate-slideleft text-center sm:text-left"
         >Being labeled a <span className="font-semibold">&quot;Full-Stack&quot;</span>developer is a heavy title that I have learned to wear with confidence.
           I enjoy the larger scope and extra understanding that come from working with both the front and back-end of a project.
           <br /><br />

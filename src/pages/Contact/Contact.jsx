@@ -71,12 +71,12 @@ const Contact = () => {
               className="border border-gray-200"
             />
           </div>
-          <div className="lg:hidden relative flex flex-col items-center justify-center uppercase mb-6">
+          <div className="lg:hidden relative flex flex-col items-center justify-center mb-6">
             <h2 className="text-4xl tracking-[.1em] whitespace-nowrap text-gray-300 dark:text-gray-600 opacity-60">
-              Contact Me
+              CONTACT ME
             </h2>
             <h2 className="absolute top-1.5 text-xl font-semibold tracking-[.4em] whitespace-nowrap text-gray-800 dark:text-gray-200">
-              Let&apos;s <span className="text-blue-500">chat</span>
+              LET&apos;S <span className="text-blue-500">CHAT</span>
             </h2>
             <div className="flex flex-col items-center my-4">
               <h3 className="text-xl text-gray-600 mb-3">DON&apos;T BE SHY !</h3>

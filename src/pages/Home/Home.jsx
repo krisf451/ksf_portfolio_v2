@@ -55,21 +55,23 @@ const Home = () => {
         >
           <span>&amp; I&apos;m A</span>
           <span>‏‏‎ ‎</span>
-          <div className="flex">
+          <div className="flex flex-col sm:flex-row">
             <Typewriter
               options={{
-                strings: ['<span class="text-blue-700">Full-Stack</span>', '<span class="text-blue-700">Professional</span>'],
+                strings: ['<span class="text-blue-700">Full-Stack</span>',
+                  '<span class="text-blue-700">Software</span>',
+                  '<span class="text-blue-700">Javascript</span>'],
                 autoStart: true,
                 pauseFor: 2000,
                 loop: true,
               }}
             />
-            <span>‏‏‎ ‎</span>
+            <span className="hidden sm:inline">‏‏‎ ‎</span>
             <Typewriter
               options={{
-                strings: ['Web Developer', 'Software Engineer'],
+                strings: ['Web Developer', 'Engineer', 'Enthusiast'],
                 autoStart: true,
-                pauseFor: 1600,
+                pauseFor: 2000,
                 loop: true,
               }}
             />

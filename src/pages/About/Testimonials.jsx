@@ -1,9 +1,4 @@
-/* eslint-disable import/no-unresolved */
-import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 import TestimonialCard from './TestimonialCard';
-import 'swiper/css';
 
 const Testimonials = ({ testimonials }) => (
   <div>

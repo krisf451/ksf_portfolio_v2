@@ -9,7 +9,7 @@ const menus = [
 ];
 
 const Navbar = () => (
-  <nav className="w-full mb-10 h-[80px] flex justify-between items-end py-4 uppercase tracking-[.2em] font-medium text-gray-600 dark:text-gray-200 transition-colors duration-300 ease-in-out">
+  <nav className="relative w-full mb-10 h-[80px] flex justify-between items-end py-4 uppercase tracking-[.2em] font-medium text-gray-600 dark:text-gray-200 transition-colors duration-300 ease-in-out">
     <DesktopNav menus={menus} />
     <MobileNav menus={menus} />
   </nav>

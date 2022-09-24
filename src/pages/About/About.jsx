@@ -53,7 +53,7 @@ const About = () => {
 
   return (
     <AnimatePage>
-      <div className="flex items-start">
+      <div className="flex items-start lg:pt-0">
         <div className="hidden w-full lg:flex flex-col items-center uppercase animate-slowfade justify-center mx-2">
           <motion.div
             key={activeHeader.id}
@@ -68,7 +68,7 @@ const About = () => {
             </h2>
           </motion.div>
           <AboutNav />
-          <img src="about1.jpeg" alt="about" className="rounded-md w-[85%] h-[500px] mt-12 hover:shadow-2xl shadow-lg" />
+          <img src="about1.jpeg" alt="about" className="rounded-md lg:w-[85%] xl:w-[90%] max-w-[800px] h-[400px] xl:h-[550px] mt-24 xl:mt-12 mx-auto hover:shadow-2xl shadow-lg" />
         </div>
 
         <div className="lg:overflow-y-scroll lg:h-[calc(100vh-120px)] flex flex-col w-full h-full relative">
@@ -87,10 +87,7 @@ const About = () => {
             </a>
           </div>
           <div className="lg:hidden uppercase animate-slowfade">
-            <h3 className="text-lg tracking-[.2em] text-center hidden sm:block">Get to know me...</h3>
-            <div className="w-full bg-black">
-              <img src="ksf_logo.png" alt="" className="w-full h-[50px] object-contain sm:hidden" />
-            </div>
+            <h3 className="text-lg tracking-[.2em] text-center">Get to know me...</h3>
             <AboutNav />
           </div>
           <div className="w-full h-full">

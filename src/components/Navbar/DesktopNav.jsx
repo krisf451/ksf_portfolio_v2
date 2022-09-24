@@ -8,7 +8,7 @@ import DarkModeToggle from './DarkModeToggle';
 const DesktopNav = ({ menus }) => {
   const location = useLocation();
   return (
-    <>
+    <div className="flex justify-between w-full px-4">
       <ul className="hidden md:flex items-end">
         {menus.map((item, i) => (
           <li key={i} className="px-4 cursor-pointer group">
@@ -23,7 +23,7 @@ const DesktopNav = ({ menus }) => {
           </li>
         ))}
       </ul>
-      <ul className="md:flex hidden items-end">
+      <ul className="hidden md:flex items-end">
         <li className="group">
           <a href="ksf_resume_new.pdf" download="ksf-resume" className="customSlideUp flex items-center gap-3 whitespace-nowrap cursor-pointer pl-[.3rem]">
             <BsDownload className="text-xl" />
@@ -32,7 +32,7 @@ const DesktopNav = ({ menus }) => {
         </li>
         <DarkModeToggle />
       </ul>
-    </>
+    </div>
   );
 };
 

@@ -32,10 +32,7 @@ const MobileNav = ({ menus }) => {
   };
 
   return (
-    <div className="md:hidden relative flex w-full justify-between px-4 items-center h-10">
-      <Link to="/about">
-        <h3 className="text-xl customSlideUp uppercase">Kristian F.</h3>
-      </Link>
+    <div className="md:hidden relative flex w-full justify-end px-4 items-center h-10 z-50">
       <AiOutlineMenu className={`${toggle && 'hidden'} cursor-pointer text-[1.6rem] customSlideUp z-30`} id="menu-btn" onClick={handleToggle} />
       <AnimatePresence mode="wait">
         {toggle && (
@@ -44,21 +41,16 @@ const MobileNav = ({ menus }) => {
           transition={{ duration: 0.35, ease: 'easeInOut' }}
           exit={{ x: [0, 100], opacity: [1, 0] }}
           id="mobile-menu"
-          className="fixed top-0 bottom-0 right-0 z-[50] w-[70%] sm:w-[50%] h-screen flex flex-col justify-end items-end bg-white dark:bg-[#13131c] dark:text-white shadow-xl"
+          className="fixed top-0 bottom-0 right-0 z-[50] w-[70%] sm:w-[50%] min-h-screen bg-white dark:bg-[#13131c] dark:text-white shadow-xl"
         >
-          <p>
-            <AiOutlineClose onClick={() => setToggle(false)} className="customSlideUp text-[2rem] cursor-pointer mt-8 mr-6" />
-          </p>
-          <div className="flex items-center justify-center w-full py-10 text-3xl cursor-pointer">
-            {darkmode ? <BsFillSunFill className="animate-slowfade" onClick={() => setDarkmode((prev) => !prev)} /> : <MdDarkMode className="animate-slowfade" onClick={() => setDarkmode((prev) => !prev)} />}
+          <div className="flex justify-between w-full items-center p-6 text-2xl">
+            <img src="headshot1.png" alt="" className="object-fill h-[50px] w-[50px] rounded-full" />
+            <p className="cursor-pointer">
+              {darkmode ? <BsFillSunFill className="animate-slowfade" onClick={() => setDarkmode((prev) => !prev)} /> : <MdDarkMode className="animate-slowfade" onClick={() => setDarkmode((prev) => !prev)} />}
+            </p>
+            <AiOutlineClose onClick={() => setToggle(false)} className="customSlideUp text-[1.5rem] cursor-pointer" />
           </div>
-          <div className="flex flex-col items-center justify-center mb-12 tracking-[.1em] gap-4 mx-auto">
-            <img src="headshot1.png" alt="" className="object-fill h-[75px] w-[75px] rounded-full" />
-            <p className="text-sm font-extrabold">Kristian Fulkerson</p>
-            <p className="text-xs font-extrabold">Full-Stack Developer</p>
-            <Socials />
-          </div>
-          <ul className="h-full w-full flex flex-start flex-col gap-4" id="mobile-links">
+          <ul className="h-full w-full flex flex-col gap-4 mt-20" id="mobile-links">
             {menus.map((item, i) => (
               <li key={i} className="transition-colors duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700">
                 <Link to={item.route} onClick={() => setToggle(false)}>
@@ -67,7 +59,7 @@ const MobileNav = ({ menus }) => {
               </li>
             ))}
             <li className="transition-all duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700">
-              <a href="ksf_resume_new.pdf" download="ksf-resume" onClick={() => setToggle(false)} className="">
+              <a href="ksf_resume_new.pdf" download="ksf-resume" onClick={() => setToggle(false)}>
                 <p className="text-center py-2 customSlideUp">
                   Download CV
                 </p>
