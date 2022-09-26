@@ -4,7 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 
 const ProjectModal = ({ open, setOpen, project }) => (
   <Transition.Root show={open} as={Fragment}>
-    <Dialog as="div" className="relative z-10" onClose={() => setOpen(false)}>
+    <Dialog as="div" className="relative z-30" onClose={() => setOpen(false)}>
       <Transition.Child
         as={Fragment}
         enter="ease-out duration-300"
