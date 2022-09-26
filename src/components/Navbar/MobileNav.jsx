@@ -33,7 +33,7 @@ const MobileNav = ({ menus }) => {
 
   return (
     <div className="md:hidden relative flex w-full justify-end px-4 items-center h-10 z-50">
-      <AiOutlineMenu className={`${toggle && 'hidden'} cursor-pointer text-[1.6rem] customSlideUp z-30`} id="menu-btn" onClick={handleToggle} />
+      <AiOutlineMenu className={`${toggle && 'hidden'} cursor-pointer text-[1.6rem] customSlideUp z-30 fixed top-[28px] right-[25px]`} id="menu-btn" onClick={handleToggle} />
       <AnimatePresence mode="wait">
         {toggle && (
         <motion.div
