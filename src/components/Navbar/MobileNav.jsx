@@ -58,7 +58,7 @@ const MobileNav = ({ menus }) => {
               </li>
             ))}
             <li className="transition-all duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700">
-              <a href="ksf_resume_new.pdf" download="ksf-resume" onClick={() => setToggle(false)}>
+              <a href="/ksf_new_resume_12_11_2022.pdf" download="ksf-resume" onClick={() => setToggle(false)}>
                 <p className="text-center py-2 customSlideUp">
                   Download CV
                 </p>

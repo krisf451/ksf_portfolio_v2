@@ -25,7 +25,11 @@ const DesktopNav = ({ menus }) => {
       </ul>
       <ul className="hidden md:flex items-end">
         <li className="group">
-          <a href="ksf_resume_new.pdf" download="ksf-resume" className="customSlideUp flex items-center gap-3 whitespace-nowrap cursor-pointer pl-[.3rem]">
+          <a
+            href="ksf_new_resume_12_11_2022.pdf"
+            download="ksf-resume"
+            className="customSlideUp flex items-center gap-3 whitespace-nowrap cursor-pointer pl-[.3rem]"
+          >
             <BsDownload className="text-xl" />
             Download CV
           </a>

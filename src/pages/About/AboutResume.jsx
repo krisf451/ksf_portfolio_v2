@@ -82,7 +82,7 @@ const AboutResume = () => {
           <Socials />
           <div className="">
             <button type="button" className="fadeBtn hover:animate-makeItfadeIn font-medium uppercase border w-64 border-gray-800 p-3 dark:animate-none dark:hover:bg-white dark:hover:text-black">
-              <a href="ksf_resume_new.pdf" download="ksf-resume">
+              <a href="/ksf_new_resume_12_11_2022.pdf" download="ksf-resume">
                 Download Resume
               </a>
             </button>
